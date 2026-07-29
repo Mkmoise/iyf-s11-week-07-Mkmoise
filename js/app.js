@@ -24,6 +24,26 @@ function createTask() {
     taskEntryField.value = "";
 }
 
+function updateTaskCompletionStatus(taskIdentifier) {
+    applicationState.taskCollection =
+        applicationState.taskCollection.map(function (taskItem) {
+
+            if (taskItem.taskIdentifier === taskIdentifier) {
+                return {
+                    ...taskItem,
+                    taskCompleted: !taskItem.taskCompleted
+                };
+            }
+
+            return taskItem;
+        });
+
+    saveTaskCollection(applicationState.taskCollection);
+
+    displayTaskCollection();
+}
+
+
 createTaskButton.addEventListener("click", createTask);
 
 displayTaskCollection();
