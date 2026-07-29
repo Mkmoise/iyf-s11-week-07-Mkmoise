@@ -8,25 +8,57 @@
 </head>
 <body>
 
-    <h1>My To-Do List</h1>
+    <main class="todo-application-wrapper">
 
-    <div class="todo-container">
-        <input
-            type="text"
-            id="todo-input"
-            placeholder="Enter a task">
-        <button id="add-btn">
-            Add Task
-        </button>
+        <h1 class="application-main-heading">
+            My To-Do List
+        </h1>
 
-        <div class="filters">
-            <button id="all-btn">All</button>
-            <button id="active-btn">Active</button>
-            <button id="completed-btn">Completed</button>
-        </div>
+        <section class="task-management-panel">
 
-        <ul id="todo-list"></ul>
-    </div>
+            <input
+                type="text"
+                id="task-entry-field"
+                class="task-entry-input"
+                placeholder="Enter a new task"
+            >
+
+            <button
+                id="create-task-button"
+                class="create-task-control">
+                Add Task
+            </button>
+
+            <div class="task-filter-panel">
+
+                <button
+                    id="display-all-tasks-button"
+                    class="task-filter-button">
+                    All
+                </button>
+
+                <button
+                    id="display-active-tasks-button"
+                    class="task-filter-button">
+                    Active
+                </button>
+
+                <button
+                    id="display-completed-tasks-button"
+                    class="task-filter-button">
+                    Completed
+                </button>
+
+            </div>
+
+            <ul
+                id="task-items-container"
+                class="task-items-list">
+            </ul>
+
+        </section>
+
+    </main>
 
     <script src="js/storage.js"></script>
     <script src="js/state.js"></script>
