@@ -31,59 +31,83 @@ h1 {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#add-btn {
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.todo-application-wrapper {
     width: 100%;
-    padding: 10px;
-    background-color: #007bff;
+    max-width: 500px;
+}
+
+.application-main-heading {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.task-management-panel {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.task-entry-input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.create-task-control {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
     color: white;
+    background-color: #0d6efd;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
     cursor: pointer;
     margin-bottom: 20px;
 }
 
-#add-btn:hover {
-    background-color: #0056b3;
+.create-task-control:hover {
+    background-color: #0b5ed7;
 }
 
-.filters {
+.task-filter-panel {
     display: flex;
-    justify-content: space-between;
+    gap: 10px;
     margin-bottom: 20px;
 }
 
-.filters button {
+.task-filter-button {
     flex: 1;
-    margin: 0 5px;
     padding: 10px;
     border: none;
+    border-radius: 5px;
     background-color: #6c757d;
     color: white;
-    border-radius: 5px;
     cursor: pointer;
 }
 
-.filters button:hover {
-    background-color: #545b62;
+.task-filter-button:hover {
+    background-color: #5a6268;
 }
 
-#todo-list {
+.task-items-list {
     list-style: none;
-}
-
-#todo-list li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px;
-    margin-bottom: 10px;
-    background-color: #f8f9fa;
-    border-radius: 5px;
-    border: 1px solid #ddd;
 }
