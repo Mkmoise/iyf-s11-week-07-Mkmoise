@@ -1,14 +1,14 @@
-const TASK_STORAGE_KEY = "weekSevenTaskCollection";
+const TASKS_STORAGE_KEY = "weekSevenTasks";
 
 function saveTaskCollection(taskCollection) {
     localStorage.setItem(
-        TASK_STORAGE_KEY,
+        TASKS_STORAGE_KEY,
         JSON.stringify(taskCollection)
     );
 }
 
 function loadTaskCollection() {
-    const savedTaskCollection = localStorage.getItem(TASK_STORAGE_KEY);
+    const savedTaskCollection = localStorage.getItem(TASKS_STORAGE_KEY);
 
     if (savedTaskCollection) {
         return JSON.parse(savedTaskCollection);
