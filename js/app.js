@@ -1,21 +1,29 @@
 const taskEntryField = document.getElementById("task-entry-field");
 const createTaskButton = document.getElementById("create-task-button");
-const taskItemsContainer = document.getElementById("task-items-container");
 
-function createTaskItem() {
-    const taskText = taskEntryField.value.trim();
+function createTask() {
+    const taskDescription = taskEntryField.value.trim();
 
-    if (taskText === "") {
+    if (taskDescription === "") {
         alert("Please enter a task.");
         return;
     }
 
-    const taskListItem = document.createElement("li");
-    taskListItem.textContent = taskText;
+    const newTask = {
+        taskIdentifier: Date.now(),
+        taskDescription: taskDescription,
+        taskCompleted: false
+    };
 
-    taskItemsContainer.appendChild(taskListItem);
+    applicationState.taskCollection.push(newTask);
+
+    saveTaskCollection(applicationState.taskCollection);
+
+    displayTaskCollection();
 
     taskEntryField.value = "";
 }
 
-createTaskButton.addEventListener("click", createTaskItem);
+createTaskButton.addEventListener("click", createTask);
+
+displayTaskCollection();
