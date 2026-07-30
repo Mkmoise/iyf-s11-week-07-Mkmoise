@@ -6,17 +6,29 @@ function displayTaskCollection() {
     applicationState.taskCollection.forEach(function (taskItem) {
         const taskListItem = document.createElement("li");
 
-        taskListItem.textContent = taskItem.taskDescription;
+        const taskDescriptionSpan = document.createElement("span");
+        taskDescriptionSpan.textContent = taskItem.taskDescription;
 
         if (taskItem.taskCompleted) {
-            taskListItem.style.textDecoration = "line-through";
-            taskListItem.style.color = "gray";
+            taskDescriptionSpan.style.textDecoration = "line-through";
+            taskDescriptionSpan.style.color = "gray";
         }
 
-        taskListItem.addEventListener("click", function () {
+        taskDescriptionSpan.addEventListener("click", function () {
             updateTaskCompletionStatus(taskItem.taskIdentifier);
         });
+
+        const deleteTaskButton = document.createElement("button");
+        deleteTaskButton.textContent = "Delete";
+
+        deleteTaskButton.addEventListener("click", function () {
+            deleteTask(taskItem.taskIdentifier);
+        });
+
+        taskListItem.appendChild(taskDescriptionSpan);
+        taskListItem.appendChild(deleteTaskButton);
 
         taskItemsContainer.appendChild(taskListItem);
     });
 }
+
