@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Storage Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="session-storage-wrapper">
+
+        <h1 class="session-storage-heading">
+            Contact Form
+        </h1>
+
+        <form id="session-storage-form">
+
+            <label for="visitor-name-field">
+                Name
+            </label>
+
+            <input
+                type="text"
+                id="visitor-name-field"
+                class="visitor-name-input"
+                placeholder="Enter your name"
+            >
+
+            <label for="visitor-email-field">
+                Email
+            </label>
+
+            <input
+                type="email"
+                id="visitor-email-field"
+                class="visitor-email-input"
+                placeholder="Enter your email"
+            >
+
+            <label for="visitor-message-field">
+                Message
+            </label>
+
+            <textarea
+                id="visitor-message-field"
+                class="visitor-message-input"
+                rows="5"
+                placeholder="Write your message">
+            </textarea>
+
+            <button
+                type="submit"
+                id="submit-session-form-button"
+                class="submit-session-form-control">
+                Submit
+            </button>
+
+        </form>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
