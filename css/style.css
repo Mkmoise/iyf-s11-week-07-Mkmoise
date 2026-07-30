@@ -111,3 +111,7 @@ body {
 .task-items-list {
     list-style: none;
 }
+.completed-task {
+    text-decoration: line-through;
+    color: gray;
+}

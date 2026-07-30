@@ -9,10 +9,12 @@ function displayTaskCollection() {
         const taskDescriptionSpan = document.createElement("span");
         taskDescriptionSpan.textContent = taskItem.taskDescription;
 
-        if (taskItem.taskCompleted) {
+/*        if (taskItem.taskCompleted) {
             taskDescriptionSpan.style.textDecoration = "line-through";
-            taskDescriptionSpan.style.color = "gray";
-        }
+            taskDescriptionSpan.style.color = "gray";      }*/
+if (taskItem.taskCompleted) {
+    taskDescriptionSpan.classList.add("completed-task");
+}
 
         taskDescriptionSpan.addEventListener("click", function () {
             updateTaskCompletionStatus(taskItem.taskIdentifier);
