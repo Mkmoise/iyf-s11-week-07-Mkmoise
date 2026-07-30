@@ -1,6 +1,10 @@
 const taskEntryField = document.getElementById("task-entry-field");
 const createTaskButton = document.getElementById("create-task-button");
 
+const displayAllTasksButton = document.getElementById("display-all-tasks-button");
+const displayActiveTasksButton = document.getElementById("display-active-tasks-button");
+const displayCompletedTasksButton = document.getElementById("display-completed-tasks-button");
+
 function createTask() {
     const taskDescription = taskEntryField.value.trim();
 
@@ -27,7 +31,6 @@ function createTask() {
 function updateTaskCompletionStatus(taskIdentifier) {
     applicationState.taskCollection =
         applicationState.taskCollection.map(function (taskItem) {
-
             if (taskItem.taskIdentifier === taskIdentifier) {
                 return {
                     ...taskItem,
@@ -54,6 +57,23 @@ function deleteTask(taskIdentifier) {
     displayTaskCollection();
 }
 
+function updateTaskFilter(taskFilter) {
+    applicationState.activeTaskFilter = taskFilter;
+    displayTaskCollection();
+}
+
 createTaskButton.addEventListener("click", createTask);
+
+displayAllTasksButton.addEventListener("click", function () {
+    updateTaskFilter("all");
+});
+
+displayActiveTasksButton.addEventListener("click", function () {
+    updateTaskFilter("active");
+});
+
+displayCompletedTasksButton.addEventListener("click", function () {
+    updateTaskFilter("completed");
+});
 
 displayTaskCollection();
