@@ -43,6 +43,16 @@ function updateTaskCompletionStatus(taskIdentifier) {
     displayTaskCollection();
 }
 
+function deleteTask(taskIdentifier) {
+    applicationState.taskCollection =
+        applicationState.taskCollection.filter(function (taskItem) {
+            return taskItem.taskIdentifier !== taskIdentifier;
+        });
+
+    saveTaskCollection(applicationState.taskCollection);
+
+    displayTaskCollection();
+}
 
 createTaskButton.addEventListener("click", createTask);
 
