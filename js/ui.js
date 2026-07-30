@@ -3,7 +3,22 @@ function displayTaskCollection() {
 
     taskItemsContainer.innerHTML = "";
 
-    applicationState.taskCollection.forEach(function (taskItem) {
+    /*applicationState.taskCollection.forEach(function (taskItem)*/
+        let filteredTaskCollection = applicationState.taskCollection;
+
+if (applicationState.activeTaskFilter === "active") {
+    filteredTaskCollection = applicationState.taskCollection.filter(function (taskItem) {
+        return !taskItem.taskCompleted;
+    });
+}
+
+if (applicationState.activeTaskFilter === "completed") {
+    filteredTaskCollection = applicationState.taskCollection.filter(function (taskItem) {
+        return taskItem.taskCompleted;
+    });
+}
+
+filteredTaskCollection.forEach(function (taskItem) {{
         const taskListItem = document.createElement("li");
 
         const taskDescriptionSpan = document.createElement("span");
