@@ -6,7 +6,7 @@ const displayActiveTasksButton = document.getElementById("display-active-tasks-b
 const displayCompletedTasksButton = document.getElementById("display-completed-tasks-button");
 
 function createTask() {
-    const taskDescription = taskEntryField.value.trim();
+    const taskDescription = cleanInput(taskEntryField.value);
 
     if (taskDescription === "") {
         alert("Please enter a task.");
@@ -14,7 +14,7 @@ function createTask() {
     }
 
     const newTask = {
-        taskIdentifier: Date.now(),
+        taskIdentifier: generateTaskId(),
         taskDescription: taskDescription,
         taskCompleted: false
     };
